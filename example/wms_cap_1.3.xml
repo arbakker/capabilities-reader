@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<WMS_Capabilities version="1.3.0" 
+    xmlns="http://www.opengis.net/wms" 
+    xmlns:sld="http://www.opengis.net/sld" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:ms="http://mapserver.gis.umn.edu/mapserver" xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd  http://www.opengis.net/sld http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd  http://mapserver.gis.umn.edu/mapserver https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;service=WMS&amp;version=1.3.0&amp;request=GetSchemaExtension">
+
+    <!-- MapServer version 7.4.2 OUTPUT=PNG OUTPUT=JPEG SUPPORTS=PROJ SUPPORTS=AGG SUPPORTS=FREETYPE SUPPORTS=CAIRO SUPPORTS=ICONV SUPPORTS=XMP SUPPORTS=FRIBIDI SUPPORTS=WMS_SERVER SUPPORTS=WMS_CLIENT SUPPORTS=WFS_SERVER SUPPORTS=WFS_CLIENT SUPPORTS=WCS_SERVER SUPPORTS=FASTCGI SUPPORTS=GEOS SUPPORTS=POINT_Z_M INPUT=JPEG INPUT=POSTGIS INPUT=OGR INPUT=GDAL INPUT=SHAPEFILE -->
+
+    <Service>
+        <Name>WMS</Name>
+        <Title>Regionale Wandelnetwerken</Title>
+        <Abstract>Bestaande Regionale Wandelknooppunten, geleverd vanuit de Landelijke Routedatabank van Stichting Landelijk Fietsplatform.</Abstract>
+        <KeywordList>
+            <Keyword>lf-routes</Keyword>
+            <Keyword>wandelnetwerken</Keyword>
+            <Keyword>wandelknooppunten</Keyword>
+            <Keyword>law-routes</Keyword>
+            <Keyword>nationale</Keyword>
+            <Keyword>streekpaden</Keyword>
+            <Keyword>wandelnet</Keyword>
+            <Keyword>wandelroutes</Keyword>
+            <Keyword>wandelroutes</Keyword>
+            <Keyword>landelijke wandelroutes</Keyword>
+            <Keyword>wandelroutenetwerken</Keyword>
+            <Keyword>routenetwerken</Keyword>
+            <Keyword>wandelknooppuntnetwerken</Keyword>
+            <Keyword>knooppuntroutes</Keyword>
+            <Keyword>wandelplatform</Keyword>
+            <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+        </KeywordList>
+        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl"/>
+        <ContactInformation>
+            <ContactPersonPrimary>
+                <ContactPerson>KlantContactCenter PDOK</ContactPerson>
+                <ContactOrganization>PDOK</ContactOrganization>
+            </ContactPersonPrimary>
+            <ContactPosition>pointOfContact</ContactPosition>
+            <ContactAddress>
+                <AddressType>Work</AddressType>
+                <Address/>
+                <City>Apeldoorn</City>
+                <StateOrProvince/>
+                <PostCode/>
+                <Country>Nederland</Country>
+            </ContactAddress>
+            <ContactVoiceTelephone/>
+            <ContactFacsimileTelephone/>
+            <ContactElectronicMailAddress>BeheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+        </ContactInformation>
+        <Fees>NONE</Fees>
+        <AccessConstraints>otherRestrictions;De geografische informatie mag uitsluitend gebruikt worden voor beleidsdoeleinden. Voor alle overige doeleinden dient vooraf bij het Landelijk Wandelplatform toestemming te worden verkregen. Copyright van de geleverde informatie blijft in alle gevallen bij de Stichting Landelijk Wandelplatform en de regionale wandelroutenetwerken rusten.</AccessConstraints>
+        <MaxWidth>4096</MaxWidth>
+        <MaxHeight>4096</MaxHeight>
+    </Service>
+    <Capability>
+        <Request>
+            <GetCapabilities>
+                <Format>text/xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetCapabilities>
+            <GetMap>
+                <Format>image/png</Format>
+                <Format>image/jpeg</Format>
+                <Format>image/png; mode=8bit</Format>
+                <Format>image/vnd.jpeg-png</Format>
+                <Format>image/vnd.jpeg-png8</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetMap>
+            <GetFeatureInfo>
+                <Format>application/vnd.ogc.gml</Format>
+                <Format>text/html</Format>
+                <Format>text/plain</Format>
+                <Format>application/json</Format>
+                <Format>application/json; subtype=geojson</Format>
+                <Format>text/xml</Format>
+                <Format>text/xml; subtype=gml/3.1.1</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </GetFeatureInfo>
+            <sld:DescribeLayer>
+                <Format>text/xml</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </sld:DescribeLayer>
+            <sld:GetLegendGraphic>
+                <Format>image/png</Format>
+                <Format>image/jpeg</Format>
+                <Format>image/png; mode=8bit</Format>
+                <Format>image/vnd.jpeg-png</Format>
+                <Format>image/vnd.jpeg-png8</Format>
+                <DCPType>
+                    <HTTP>
+                        <Get>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Get>
+                        <Post>
+                            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;"/>
+                        </Post>
+                    </HTTP>
+                </DCPType>
+            </sld:GetLegendGraphic>
+        </Request>
+        <Exception>
+            <Format>XML</Format>
+            <Format>INIMAGE</Format>
+            <Format>BLANK</Format>
+        </Exception>
+        <sld:UserDefinedSymbolization SupportSLD="1" UserLayer="0" UserStyle="1" RemoteWFS="0" InlineFeature="0" RemoteWCS="0"/>
+        <Layer queryable="1">
+            <Title>Regionale Wandelnetwerken</Title>
+            <Abstract>Bestaande Regionale Wandelknooppunten, geleverd vanuit de Landelijke Routedatabank van Stichting Landelijk Fietsplatform.</Abstract>
+            <KeywordList>
+                <Keyword>lf-routes</Keyword>
+                <Keyword>wandelnetwerken</Keyword>
+                <Keyword>wandelknooppunten</Keyword>
+                <Keyword>law-routes</Keyword>
+                <Keyword>nationale</Keyword>
+                <Keyword>streekpaden</Keyword>
+                <Keyword>wandelnet</Keyword>
+                <Keyword>wandelroutes</Keyword>
+                <Keyword>wandelroutes</Keyword>
+                <Keyword>landelijke wandelroutes</Keyword>
+                <Keyword>wandelroutenetwerken</Keyword>
+                <Keyword>routenetwerken</Keyword>
+                <Keyword>wandelknooppuntnetwerken</Keyword>
+                <Keyword>knooppuntroutes</Keyword>
+                <Keyword>wandelplatform</Keyword>
+                <Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+            </KeywordList>
+            <CRS>EPSG:28992</CRS>
+            <CRS>EPSG:25831</CRS>
+            <CRS>EPSG:25832</CRS>
+            <CRS>EPSG:3034</CRS>
+            <CRS>EPSG:3035</CRS>
+            <CRS>EPSG:3857</CRS>
+            <CRS>EPSG:4258</CRS>
+            <CRS>EPSG:4326</CRS>
+            <CRS>CRS:84</CRS>
+            <EX_GeographicBoundingBox>
+                <westBoundLongitude>3.07312</westBoundLongitude>
+                <eastBoundLongitude>7.31586</eastBoundLongitude>
+                <southBoundLatitude>50.2213</southBoundLatitude>
+                <northBoundLatitude>54.5092</northBoundLatitude>
+            </EX_GeographicBoundingBox>
+            <BoundingBox CRS="EPSG:28992" minx="5000" miny="250000" maxx="280000" maxy="725000"/>
+            <BoundingBox CRS="EPSG:25831" minx="504737" miny="5.56328e+06" maxx="795163" maxy="6.04707e+06"/>
+            <BoundingBox CRS="EPSG:25832" minx="92469.9" miny="5.56555e+06" maxx="390922" maxy="6.05393e+06"/>
+            <BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.5379e+06" maxx="3.08791e+06" maxy="3.83174e+06"/>
+            <BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.84255e+06" maxx="3.5083e+06" maxy="4.14707e+06"/>
+            <BoundingBox CRS="EPSG:3857" minx="342098" miny="6.4847e+06" maxx="814398" maxy="7.26719e+06"/>
+            <BoundingBox CRS="EPSG:4258" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+            <BoundingBox CRS="EPSG:4326" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+            <BoundingBox CRS="CRS:84" minx="3.07312" miny="50.2213" maxx="7.31586" maxy="54.5092"/>
+            <Layer queryable="1" opaque="0" cascaded="0">
+                <Name>wandelknooppunten</Name>
+                <Title>Wandelknooppunten</Title>
+                <Abstract>Wandelknooppunten</Abstract>
+                <KeywordList>
+                    <Keyword>Wandel Knooppunten</Keyword>
+                </KeywordList>
+                <CRS>EPSG:28992</CRS>
+                <EX_GeographicBoundingBox>
+                    <westBoundLongitude>3.07312</westBoundLongitude>
+                    <eastBoundLongitude>7.31586</eastBoundLongitude>
+                    <southBoundLatitude>50.2213</southBoundLatitude>
+                    <northBoundLatitude>54.5092</northBoundLatitude>
+                </EX_GeographicBoundingBox>
+                <BoundingBox CRS="EPSG:28992" minx="5000" miny="250000" maxx="280000" maxy="725000"/>
+                <BoundingBox CRS="EPSG:25831" minx="504737" miny="5.56328e+06" maxx="795163" maxy="6.04707e+06"/>
+                <BoundingBox CRS="EPSG:25832" minx="92469.9" miny="5.56555e+06" maxx="390922" maxy="6.05393e+06"/>
+                <BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.5379e+06" maxx="3.08791e+06" maxy="3.83174e+06"/>
+                <BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.84255e+06" maxx="3.5083e+06" maxy="4.14707e+06"/>
+                <BoundingBox CRS="EPSG:3857" minx="342098" miny="6.4847e+06" maxx="814398" maxy="7.26719e+06"/>
+                <BoundingBox CRS="EPSG:4258" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+                <BoundingBox CRS="EPSG:4326" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+                <BoundingBox CRS="CRS:84" minx="3.07312" miny="50.2213" maxx="7.31586" maxy="54.5092"/>
+                <AuthorityURL name="wandelplatform">
+                    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.wandelplatform.nl"/>
+                </AuthorityURL>
+                <Identifier authority="wandelplatform">nl.wandelplatform.1</Identifier>
+                <MetadataURL type="TC211">
+                    <Format>application/xml</Format>
+                    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=25d77eb3-c4f6-4e6a-b974-8a93a1ace20a"/>
+                </MetadataURL>
+                <Style>
+                    <Name>default</Name>
+                    <Title>default</Title>
+                    <LegendURL width="169" height="23">
+                        <Format>image/png</Format>
+                        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=wandelknooppunten&amp;format=image/png&amp;STYLE=default"/>
+                    </LegendURL>
+                </Style>
+            </Layer>
+            <Layer queryable="1" opaque="0" cascaded="0">
+                <Name>wandelnetwerken</Name>
+                <Title>Wandelnetwerken</Title>
+                <Abstract>Wandelnetwerken</Abstract>
+                <KeywordList>
+                    <Keyword>Wandelnetwerken</Keyword>
+                </KeywordList>
+                <CRS>EPSG:28992</CRS>
+                <EX_GeographicBoundingBox>
+                    <westBoundLongitude>3.07312</westBoundLongitude>
+                    <eastBoundLongitude>7.31586</eastBoundLongitude>
+                    <southBoundLatitude>50.2213</southBoundLatitude>
+                    <northBoundLatitude>54.5092</northBoundLatitude>
+                </EX_GeographicBoundingBox>
+                <BoundingBox CRS="EPSG:28992" minx="5000" miny="250000" maxx="280000" maxy="725000"/>
+                <BoundingBox CRS="EPSG:25831" minx="504737" miny="5.56328e+06" maxx="795163" maxy="6.04707e+06"/>
+                <BoundingBox CRS="EPSG:25832" minx="92469.9" miny="5.56555e+06" maxx="390922" maxy="6.05393e+06"/>
+                <BoundingBox CRS="EPSG:3034" minx="2.61336e+06" miny="3.5379e+06" maxx="3.08791e+06" maxy="3.83174e+06"/>
+                <BoundingBox CRS="EPSG:3035" minx="3.01676e+06" miny="3.84255e+06" maxx="3.5083e+06" maxy="4.14707e+06"/>
+                <BoundingBox CRS="EPSG:3857" minx="342098" miny="6.4847e+06" maxx="814398" maxy="7.26719e+06"/>
+                <BoundingBox CRS="EPSG:4258" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+                <BoundingBox CRS="EPSG:4326" minx="50.2213" miny="3.07312" maxx="54.5092" maxy="7.31586"/>
+                <BoundingBox CRS="CRS:84" minx="3.07312" miny="50.2213" maxx="7.31586" maxy="54.5092"/>
+                <AuthorityURL name="wandelplatform">
+                    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://www.wandelplatform.nl"/>
+                </AuthorityURL>
+                <Identifier authority="wandelplatform">nl.wandelplatform.1</Identifier>
+                <MetadataURL type="TC211">
+                    <Format>application/xml</Format>
+                    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=1246d20e-47fd-4917-a88e-1ac8291ff4d8"/>
+                </MetadataURL>
+                <Style>
+                    <Name>default</Name>
+                    <Title>default</Title>
+                    <LegendURL width="154" height="20">
+                        <Format>image/png</Format>
+                        <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://geodata.nationaalgeoregister.nl/regionale-wandelnetwerken/wms?language=dut&amp;version=1.3.0&amp;service=WMS&amp;request=GetLegendGraphic&amp;sld_version=1.1.0&amp;layer=wandelnetwerken&amp;format=image/png&amp;STYLE=default"/>
+                    </LegendURL>
+                </Style>
+            </Layer>
+        </Layer>
+    </Capability>
+</WMS_Capabilities>

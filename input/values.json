@@ -1,0 +1,21 @@
+{
+    "inspire": false,
+    "service_creation_date": "24-03-2019",
+    "service_gebruiksbeperkingen": "Data zijn bedoeld voor beleidsdoeleinden.",
+    "service_licentie": {
+      "url": "http://www.fietsplatform.nl/uploads/Gebruikslicentie_Fietsplatform.pdf",
+      "description": "Geo Gedeeld licentie, Naamsvermelding verplicht, Stichting Landelijk Fietsplatform, Gebruik met doelbeperking, Doorleveren verboden"
+    }
+}
+
+
+{
+    "inspire": false,
+    "service_creation_date": "19-03-2019",
+    "service_gebruiksbeperkingen": "Deze gegevens zijn uitsluitend bedoeld voor beleidsdoeleinden. Niet te gebruiken voor navigatie.",
+    "service_licentie": {
+      "url": "https://wandelnet.nl/sites/wandelnet.nl/files/filemanager/PDFs/2018-01-19_Beleid_tav_uitlevering_routedata.pdf",
+      "description": "Geo Gedeeld licentie, Naamsvermelding verplicht, Stichting Landelijk Fietsplatform, Gebruik met doelbeperking, Doorleveren verboden"
+    }
+}
+
