@@ -8,7 +8,6 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("url")
     parser.add_argument('--service-type', dest='service_type')
-    parser.add_argument('--mergejson', dest='mergejson')
     args = parser.parse_args()
     url = args.url
     resp = requests.get(url)
@@ -22,10 +21,7 @@ def main():
         raise ValueError(f"service-type {service_type} not supported")
     service_record.url = url
     result = service_record.convert_to_dictionary()
-    if not "md_identifier" in result.keys():
-        result["md_identifier"] = str(uuid.uuid1())
-    print(json.dumps(result))
-
+    print(json.dumps(result, indent=4))
 
 if __name__ == "__main__":
     main()

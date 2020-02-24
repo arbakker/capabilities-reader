@@ -66,7 +66,6 @@ class WFSCapabilitiesDocument(BaseCapabilitiesDocument):
             "wfs": "http://www.opengis.net/wfs/2.0"
         }
         super(WFSCapabilitiesDocument, self).__init__(input_string, namespaces)
-        
 
     def get_service_title(self):
         xpath = f"/wfs:WFS_Capabilities/ows:ServiceIdentification/ows:Title"
@@ -76,7 +75,6 @@ class WFSCapabilitiesDocument(BaseCapabilitiesDocument):
     def get_service_metadata_url(self):
         xpath = f"/wfs:WFS_Capabilities/ows:OperationsMetadata/ows:ExtendedCapabilities/inspire_dls:ExtendedCapabilities/inspire_common:MetadataUrl/inspire_common:URL"
         url = self.get_single_xpath_value(xpath)
-        url = url.replace("&amp;", "&")
         return url
     
     def convert_to_dictionary(self):
@@ -101,8 +99,9 @@ class WMSCapabilitiesDocument(BaseCapabilitiesDocument):
     def get_service_metadata_url(self):
         xpath = f"/wms:WMS_Capabilities/wms:Capability/inspire_vs:ExtendedCapabilities/inspire_common:MetadataUrl/inspire_common:URL"
         url = self.get_single_xpath_value(xpath)
-        url = url.replace("&amp;", "&")
-        return url
+        if url:
+            return url.replace("&amp;", "&")
+        return ""
 
     def get_service_title(self):
         xpath = f"/wms:WMS_Capabilities/wms:Service/wms:Title"
@@ -137,16 +136,7 @@ class WMSCapabilitiesDocument(BaseCapabilitiesDocument):
         if not 'id' in parse_qs(parsed.query):
             return parse_qs(parsed.query)['uuid'][0]
         return parse_qs(parsed.query)['id'][0]
-        
-    def get_linked_md_record(self, ds_metadata_url):
-        req = requests.get(ds_metadata_url)
-        xml_string = req.text
-        uuid_string = str(uuid.uuid1())
-        file_path = f"/tmp/{uuid_string}.xml"
-        with open(file_path, 'w') as tempfile:
-            tempfile.write(xml_string)
-        return file_path
-    
+   
     def get_linked_md_records_identifiers(self):
         xpath = f"/wms:WMS_Capabilities/wms:Capability/wms:Layer/wms:Layer/wms:MetadataURL/wms:OnlineResource/@xlink:href"
         dataset_md_urls = self.get_all_xpath_atts(xpath)
