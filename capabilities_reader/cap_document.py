@@ -6,6 +6,15 @@ from urllib.parse import parse_qs, urlencode, urlparse, urlunparse
 from .util import is_url, get_service_cap_key
 import urllib.parse as urlparse
 from urllib.parse import parse_qs
+from abc import ABCMeta, abstractmethod
+
+class ICapabilitiesDocument:
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def get_service_title(self): raise NotImplementedError
+    def get_service_metadata_url(self): raise NotImplementedError
+
 
 class BaseCapabilitiesDocument():
     url = None
@@ -51,7 +60,7 @@ class BaseCapabilitiesDocument():
             return result[0]
         return None
 
-class WFSCapabilitiesDocument(BaseCapabilitiesDocument):
+class WFSCapabilitiesDocument(BaseCapabilitiesDocument, ICapabilitiesDocument):
     def __init__(self, input_string):
         namespaces = {
             "gml": "http://www.opengis.net/gml/3.2",
@@ -83,7 +92,7 @@ class WFSCapabilitiesDocument(BaseCapabilitiesDocument):
         result["service_metadata_url"] = self.get_service_metadata_url()
         return result
 
-class WMSCapabilitiesDocument(BaseCapabilitiesDocument):
+class WMSCapabilitiesDocument(BaseCapabilitiesDocument, ICapabilitiesDocument):
     def __init__(self, input_string):
         namespaces = {
             "wms": "http://www.opengis.net/wms", 
@@ -100,7 +109,7 @@ class WMSCapabilitiesDocument(BaseCapabilitiesDocument):
         xpath = f"/wms:WMS_Capabilities/wms:Capability/inspire_vs:ExtendedCapabilities/inspire_common:MetadataUrl/inspire_common:URL"
         url = self.get_single_xpath_value(xpath)
         if url:
-            return url.replace("&amp;", "&")
+            return url
         return ""
 
     def get_service_title(self):
