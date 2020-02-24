@@ -1,5 +1,7 @@
 from setuptools import setup, find_packages
 
+version = "0.0.1.dev0"
+
 lib_folder = os.path.dirname(os.path.realpath(__file__))
 req_path = os.path.join(lib_folder, "/requirements.txt")
 install_requires = []
@@ -13,7 +15,7 @@ with open('README.md') as f:
 
 setup(
     name='capabilities-reader',
-    version='0.1',
+    version=version,
     description='PDOK (OGC) capabilities documents reader',
     long_description=README,
     author='Anton Bakker',
